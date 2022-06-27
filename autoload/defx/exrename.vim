@@ -84,7 +84,7 @@ function! defx#exrename#create_buffer(candidates, ...) abort
       let filename = filename[len(b:exrename.cwd) :]
     endif
     " directory should end with a trailing slash (to distinguish easily)
-    if isdirectory(candidate.action__path)
+    if isdirectory(candidate.action__path) && !has('win32')
       let filename .= '/'
     endif
 
