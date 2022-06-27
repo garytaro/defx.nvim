@@ -24,7 +24,7 @@ function! defx#exrename#create_buffer(candidates, ...) abort
     let options.buffer_name = s:PREFIX . ' - ' . options.buffer_name
   endif
 
-  vsplit
+  split
   redraw
   execute 'edit' fnameescape(options.buffer_name)
 
