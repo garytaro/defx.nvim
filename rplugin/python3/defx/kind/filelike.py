@@ -636,7 +636,8 @@ class Kind(Base):
         Rename the file or directory.
         """
 
-        if len(context.targets) > 1:
+        # always apply exrename
+        if len(context.targets) >= 1:
             # ex rename
             view._vim.call('defx#exrename#create_buffer',
                            [{'action__path': str(x['action__path'])}
