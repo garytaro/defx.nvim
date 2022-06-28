@@ -25,6 +25,7 @@ function! defx#exrename#create_buffer(candidates, ...) abort
   endif
 
   split
+  resize 10
   redraw
   execute 'edit' fnameescape(options.buffer_name)
 
