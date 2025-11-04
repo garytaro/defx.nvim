@@ -573,7 +573,7 @@ class Kind(Base):
             view.print_msg(
                 f'[{index + 1}/{len(view._clipboard.candidates)}] {path}')
 
-            if dest.exists() and action != ClipboardAction.MOVE:
+            if dest.exists():
                 # Must remove dest before
                 if not dest.is_symlink() and dest.is_dir():
                     self.rmtree(dest)
